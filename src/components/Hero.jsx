@@ -1,4 +1,12 @@
-useEffect(() => {
+import { useEffect, useRef } from "react";
+import "../styles/Hero.css";
+
+export default function Hero() {
+  const videoRef = useRef(null);
+  const heroRef = useRef(null);
+  const lastScrollY = useRef(window.scrollY);
+  const lastTime = useRef(Date.now());
+  useEffect(() => {
   const video = videoRef.current;
   if (!video) return;
 
@@ -36,3 +44,28 @@ useEffect(() => {
     window.removeEventListener("scroll", handleScroll);
   };
 }, []);
+
+
+  return (
+    <section className="hero" ref={heroRef}>
+      <div className="hero-left">
+        <h1 className="glow-title">CareBridge</h1>
+        <p className="hero-sub">
+          Your Care. Our Responsibility.
+        </p>
+      </div>
+
+      <div className="hero-right">
+        <video
+          ref={videoRef}
+          src="/body.mp4"
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="hero-video"
+        />
+      </div>
+    </section>
+  );
+}
