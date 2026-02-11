@@ -1,4 +1,4 @@
-import Hero from "../components/Hero.jex";
+import Hero from "../components/Hero";
 
 export default function Page1() {
   return (
