@@ -1,20 +1,23 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
+import Navbar from "../components/Navbar";
+
+import Home from "./pages/Home";
+import Technology from "./pages/Technology";
+import Research from "./pages/Research";
+import Roadmap from "./pages/Roadmap";
+import Impact from "./pages/Impact";
 
 export default function App() {
   return (
-    <div>
+    <div style={{ background: "#02060f" }}>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Page1 />} />
-        <Route path="/page2" element={<Page2 />} />
-        <Route path="/page3" element={<Page3 />} />
-        <Route path="/page4" element={<Page4 />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/technology" element={<Technology />} />
+        <Route path="/research" element={<Research />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/impact" element={<Impact />} />
       </Routes>
     </div>
   );

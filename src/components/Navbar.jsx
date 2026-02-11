@@ -4,19 +4,23 @@ export default function Navbar() {
   return (
     <nav style={styles.nav}>
       <NavLink to="/" style={styles.link}>
-        Page1
+        Home
       </NavLink>
 
-      <NavLink to="/page2" style={styles.link}>
-        Page2
+      <NavLink to="/technology" style={styles.link}>
+        Technology
       </NavLink>
 
-      <NavLink to="/page3" style={styles.link}>
-        Page3
+      <NavLink to="/research" style={styles.link}>
+        Research
       </NavLink>
 
-      <NavLink to="/page4" style={styles.link}>
-        Page4
+      <NavLink to="/roadmap" style={styles.link}>
+        Roadmap
+      </NavLink>
+
+      <NavLink to="/about" style={styles.link}>
+        About
       </NavLink>
     </nav>
   );
@@ -25,13 +29,15 @@ export default function Navbar() {
 const styles = {
   nav: {
     display: "flex",
-    gap: "30px",
-    padding: "20px 40px",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "20px 60px",
     background: "#000",
   },
   link: {
     color: "#fff",
     textDecoration: "none",
     fontWeight: "600",
+    letterSpacing: "0.5px",
   },
 };
