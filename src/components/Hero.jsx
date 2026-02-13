@@ -70,14 +70,23 @@ export default function Hero() {
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-              <button className="btn btn-info btn-lg px-5 py-3 rounded-4 fw-bold shadow-cyan-sm">
-                Analyze Vitals
-              </button>
-              <div className="d-flex align-items-center justify-content-center text-secondary">
-                <MousePointer2 className="me-2 anim-bounce-y" size={18} />
-                <span className="small">Scroll to interact with the Twin</span>
+                {/* Primary Action Button with Verceil Link */}
+                <a 
+                  href="https://care-bridge-iota.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  <button className="btn btn-info btn-lg px-5 py-3 rounded-4 fw-bold shadow-cyan-sm transition-transform hover-scale">
+                    Analyze Vitals
+                  </button>
+                </a>
+                
+                <div className="d-flex align-items-center justify-content-center text-secondary">
+                  <MousePointer2 className="me-2 anim-bounce-y" size={18} />
+                  <span className="small">Scroll to interact with the Twin</span>
+                </div>
               </div>
-            </div>
           </div>
 
           {/* Video Column */}

@@ -54,14 +54,14 @@ export default function Home() {
     <div style={styles.pageWrapper}>
       <Hero />
 
-      {/* 01. ABOUT US */}
+      {/* 01. ABOUT US: THE VISION */}
       <section style={styles.sectionLarge} className="container text-center d-flex flex-column justify-content-center">
         <span style={styles.subtitle}>About Us</span>
         <h2 className="fw-bold display-4 mb-4">Bridging the Grey Divide</h2>
         <p className="text-secondary fs-5 mx-auto" style={{ maxWidth: "850px" }}>
           [cite_start]CareBridge is a 3D Digital Twin platform from Gauhati University designed to make proactive care actionable for India's 173 million seniors[cite: 9, 296]. [cite_start]We focus on a Zero-UI paradigm that eliminates digital literacy barriers[cite: 15, 77].
         </p>
-        <img src={digitalTwin} alt="Digital Twin Concept" className="img-fluid rounded-5 shadow-lg mt-5 mx-auto" style={{maxWidth: '80%'}} />
+        <img src={digitalTwin} alt="Digital Twin Concept" className="img-fluid rounded-5 shadow-lg mt-5 mx-auto hover-scale" style={{maxWidth: '80%'}} />
       </section>
 
       {/* 03. TECHNOLOGY: EDGE SENSING */}
@@ -79,7 +79,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center mt-4">
               <Wind className="text-info me-3" size={32} /> 
               <div>
                 <span className="d-block fw-bold">Environmental Awareness</span>
@@ -190,7 +190,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col-12 col-lg-6 text-center">
-            <img src={roadmapImg} alt="Strategic Path" className="img-fluid rounded-4" />
+            <img src={roadmapImg} alt="Strategic Path" className="img-fluid rounded-4 shadow-cyan" />
           </div>
         </div>
       </section>
@@ -255,9 +255,9 @@ const styles = {
     minHeight: "100vh",
   },
   sectionLarge: {
-    paddingTop: "120px",
-    paddingBottom: "120px",
-    minHeight: "80vh",
+    paddingTop: "140px",
+    paddingBottom: "140px",
+    minHeight: "85vh",
   },
   subtitle: {
     color: "#00f0ff",
