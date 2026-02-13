@@ -56,7 +56,7 @@ export default function Home() {
 
       {/* 01. ABOUT US */}
       <section style={styles.sectionLarge} className="container text-center d-flex flex-column justify-content-center">
-        <span style={styles.subtitle}>01. About Us</span>
+        <span style={styles.subtitle}>About Us</span>
         <h2 className="fw-bold display-4 mb-4">Bridging the Grey Divide</h2>
         <p className="text-secondary fs-5 mx-auto" style={{ maxWidth: "850px" }}>
           [cite_start]CareBridge is a 3D Digital Twin platform from Gauhati University designed to make proactive care actionable for India's 173 million seniors[cite: 9, 296]. [cite_start]We focus on a Zero-UI paradigm that eliminates digital literacy barriers[cite: 15, 77].
@@ -68,7 +68,7 @@ export default function Home() {
       <section style={styles.sectionLarge} className="container border-bottom d-flex align-items-center">
         <div className="row align-items-center gy-5 flex-lg-row-reverse w-100">
           <div className="col-12 col-lg-6 ps-lg-5">
-            <span style={styles.subtitle}>03. Technology</span>
+            <span style={styles.subtitle}>Technology</span>
             <h2 className="fw-bold display-5 mb-4">ESP32 Perception Layer</h2>
             [cite_start]<p className="text-secondary">Continuous, passive monitoring using medical-grade sensors with 400Hz sampling rates[cite: 26, 27].</p>
             <div className="d-flex align-items-center mb-4">
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* 05. TECHNOLOGY: ZERO-UI DESIGN */}
       <section style={styles.sectionLarge} className="container text-center border-bottom d-flex flex-column justify-content-center">
-        <span style={styles.subtitle}>05. Visual Innovation</span>
+        <span style={styles.subtitle}>Visual Innovation</span>
         <h2 className="fw-bold display-5 mb-4">The 3D Digital Twin</h2>
         [cite_start]<p className="text-secondary mb-5">Interpretation via color and spatial context—no text required[cite: 78].</p>
         <div className="row g-5 align-items-center">
@@ -142,7 +142,7 @@ export default function Home() {
             <Bar data={accuracyData} options={barOptions} />
           </div>
           <div className="col-12 col-lg-6 ps-lg-5">
-            <span style={styles.subtitle}>06. Research</span>
+            <span style={styles.subtitle}>Research</span>
             <h2 className="fw-bold display-5 mb-4">Gold Standard Training</h2>
             [cite_start]<p className="text-secondary mb-4">Validated against the MIT-BIH Arrhythmia Database and MIMIC-III ICU records[cite: 89, 100].</p>
             <div className="p-4 rounded-4 bg-dark-soft border-start border-info border-5">
@@ -176,7 +176,7 @@ export default function Home() {
       <section style={styles.sectionLarge} className="container border-bottom d-flex align-items-center">
         <div className="row align-items-center gy-5 w-100">
           <div className="col-12 col-lg-6 pe-lg-5">
-            <span style={styles.subtitle}>08. Roadmap</span>
+            <span style={styles.subtitle}>Roadmap</span>
             <h2 className="fw-bold display-5 mb-4">National Integration</h2>
             <div className="ms-4 mt-5">
               <div className="mb-5 border-start border-info border-4 ps-4">
@@ -197,7 +197,7 @@ export default function Home() {
 
       {/* 09. IMPACT */}
       <section style={styles.sectionLarge} className="container text-center border-bottom d-flex flex-column justify-content-center">
-        <span style={styles.subtitle}>09. Impact</span>
+        <span style={styles.subtitle}>Impact</span>
         <h2 className="fw-bold display-5 mb-5">Economic Resilience</h2>
         <div className="row g-5 mt-4">
           <div className="col-md-4">
@@ -225,7 +225,7 @@ export default function Home() {
       <section style={styles.sectionLarge} className="container d-flex align-items-center">
         <div className="row align-items-center gy-5 flex-lg-row-reverse w-100">
           <div className="col-12 col-lg-6 ps-lg-5">
-            <span style={styles.subtitle}>10. Privacy</span>
+            <span style={styles.subtitle}>Privacy</span>
             <h2 className="fw-bold display-5 mb-4">Responsible AI</h2>
             [cite_start]<p className="text-secondary mb-4">Privacy by design: No audio/video, local anomaly detection on-device, and AES-256 encryption[cite: 271].</p>
             <div className="d-flex align-items-center p-3 rounded-3 bg-dark-soft">
