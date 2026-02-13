@@ -14,14 +14,65 @@ import { Bar } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export default function Impact() {
+
   const performanceData = {
     labels: ["Sensitivity", "Specificity", "F1 Score", "PPV"],
     datasets: [
       {
         label: "CareBridge (%)",
         data: [95.3, 91.7, 92.1, 89.3],
+        backgroundColor: [
+          "#00f5a0",
+          "#00d9f5",
+          "#3b82f6",
+          "#22c55e",
+        ],
+        borderRadius: 8,
+        borderSkipped: false,
       },
     ],
+  };
+
+  const performanceOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: "#ffffff",
+          font: { size: 14 },
+        },
+      },
+      tooltip: {
+        backgroundColor: "#1e293b",
+        titleColor: "#00f5a0",
+        bodyColor: "#ffffff",
+        borderColor: "#00d9f5",
+        borderWidth: 1,
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#cbd5e1",
+          font: { size: 13 },
+        },
+        grid: {
+          color: "rgba(255,255,255,0.08)",
+        },
+      },
+      y: {
+        min: 0,
+        max: 100,
+        ticks: {
+          color: "#cbd5e1",
+          font: { size: 13 },
+        },
+        grid: {
+          color: "rgba(255,255,255,0.08)",
+        },
+      },
+    },
   };
 
   return (
@@ -32,6 +83,7 @@ export default function Impact() {
         <div className="container text-center mb-5">
           <h2 className="section-title mb-4">The Grey Divide Crisis</h2>
           <div className="row">
+
             <div className="col-md-4 mb-4">
               <div className="impact-card p-4">
                 <h3>173 Million+</h3>
@@ -64,6 +116,7 @@ export default function Impact() {
                 <p>Manage 2+ chronic diseases (MIMIC-III analysis)</p>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -72,7 +125,11 @@ export default function Impact() {
           <h2 className="section-title text-center mb-4">
             Cardiac Event Detection Performance
           </h2>
-          <Bar data={performanceData} />
+
+          <div style={{ height: "400px" }}>
+            <Bar data={performanceData} options={performanceOptions} />
+          </div>
+
           <p className="text-center mt-3">
             Validated on MIT-BIH Arrhythmia Database  
             <br />
@@ -120,7 +177,7 @@ export default function Impact() {
           </div>
         </div>
 
-        {/* Environmental Data Source */}
+        {/* Environmental */}
         <div className="container text-center mb-5">
           <h2 className="section-title mb-4">Environmental Correlation Engine</h2>
           <div className="impact-card p-4">
@@ -139,7 +196,7 @@ export default function Impact() {
           <h2 className="section-title mb-4">Projected Clinical Impact</h2>
           <div className="impact-card p-4">
             <p>
-              38% Reduction in preventable hospitalizations  
+              38% Reduction in Preventable Hospitalizations  
               <br />
               ₹31,050 Annual Cost Savings per Patient  
               <br />
@@ -154,8 +211,11 @@ export default function Impact() {
           <div className="impact-card p-5">
             <p>
               Serve 100,000 elderly patients  
+              <br />
               Prevent 38,000 hospitalizations annually  
+              <br />
               Save ₹310 Crore in healthcare expenditure  
+              <br />
               Integrate with Ayushman Bharat Digital Mission
             </p>
           </div>
@@ -170,6 +230,7 @@ export default function Impact() {
           background: #0f172a;
           color: white;
         }
+
         .section-title {
           font-weight: 700;
           font-size: 2rem;
@@ -177,10 +238,22 @@ export default function Impact() {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+
         .impact-card {
           background: rgba(255, 255, 255, 0.05);
           border-radius: 15px;
           backdrop-filter: blur(10px);
+        }
+
+        a {
+          color: #00d9f5;
+          text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+          .section-title {
+            font-size: 1.6rem;
+          }
         }
       `}</style>
     </>
