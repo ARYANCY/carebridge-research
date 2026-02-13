@@ -79,7 +79,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Zytact
+                    Arnab Chakraborty
                   </a>
                 </li>
               </ul>

@@ -1,32 +1,57 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav style={styles.nav}>
-      <div style={styles.brand}>CareBridge</div>
+    <>
+      <nav style={styles.nav}>
+        <div style={styles.brand}>CareBridge</div>
 
-      <div style={styles.linksWrapper}>
-        <NavLink to="/" style={styles.link}>
-          Home
-        </NavLink>
+        {/* Hamburger */}
+        <div
+          style={styles.hamburger}
+          onClick={() => setOpen(!open)}
+        >
+          <div style={styles.bar}></div>
+          <div style={styles.bar}></div>
+          <div style={styles.bar}></div>
+        </div>
 
-        <NavLink to="/technology" style={styles.link}>
-          Technology
-        </NavLink>
+        {/* Links */}
+        <div
+          style={{
+            ...styles.linksWrapper,
+            ...(open ? styles.linksOpen : {}),
+          }}
+        >
+          <NavLink to="/" style={styles.link}>
+            Home
+          </NavLink>
+          <NavLink to="/technology" style={styles.link}>
+            Technology
+          </NavLink>
+          <NavLink to="/research" style={styles.link}>
+            Research
+          </NavLink>
+          <NavLink to="/roadmap" style={styles.link}>
+            Roadmap
+          </NavLink>
+          <NavLink to="/impact" style={styles.link}>
+            Impact
+          </NavLink>
+        </div>
+      </nav>
 
-        <NavLink to="/research" style={styles.link}>
-          Research
-        </NavLink>
-
-        <NavLink to="/roadmap" style={styles.link}>
-          Roadmap
-        </NavLink>
-
-        <NavLink to="/impact" style={styles.link}>
-          Impact
-        </NavLink>
-      </div>
-    </nav>
+      <style jsx>{`
+        @media (max-width: 900px) {
+          nav {
+            padding: 20px 24px !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }
 
@@ -39,7 +64,7 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "22px 80px",
-    background: "rgba(2, 6, 15, 0.85)",
+    background: "rgba(2, 6, 15, 0.9)",
     backdropFilter: "blur(14px)",
     borderBottom: "1px solid rgba(0, 240, 255, 0.08)",
     fontFamily: "'Inter', sans-serif",
@@ -59,15 +84,50 @@ const styles = {
     alignItems: "center",
   },
 
-  link: {
-    position: "relative",
-    fontSize: "15px",
+  linksOpen: {
+    position: "absolute",
+    top: "80px",
+    right: "20px",
+    background: "rgba(5, 10, 20, 0.95)",
+    backdropFilter: "blur(20px)",
+    flexDirection: "column",
+    padding: "30px",
+    borderRadius: "16px",
+    gap: "24px",
+    border: "1px solid rgba(0,240,255,0.1)",
+  },
+
+  link: ({ isActive }) => ({
+    fontSize: "14px",
     fontWeight: "600",
     letterSpacing: "1.2px",
     textTransform: "uppercase",
-    color: "#b8c7da",
+    color: isActive ? "#00f0ff" : "#b8c7da",
     textDecoration: "none",
     paddingBottom: "6px",
-    transition: "color 0.3s ease",
+  }),
+
+  hamburger: {
+    display: "none",
+    flexDirection: "column",
+    gap: "6px",
+    cursor: "pointer",
+  },
+
+  bar: {
+    width: "24px",
+    height: "2px",
+    backgroundColor: "#ffffff",
   },
 };
+
+/* Mobile behavior */
+if (typeof window !== "undefined") {
+  const mediaQuery = window.matchMedia("(max-width: 900px)");
+  if (mediaQuery.matches) {
+    styles.linksWrapper = {
+      display: "none",
+    };
+    styles.hamburger.display = "flex";
+  }
+}
