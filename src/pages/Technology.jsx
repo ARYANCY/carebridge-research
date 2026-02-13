@@ -41,7 +41,9 @@ export default function Technology() {
           <li style={styles.listItem}>PubMed fine-tuned sentence transformers</li>
           <li style={styles.listItem}>Gemini / Llama inference backend</li>
           <li style={styles.listItem}>Top-K similarity retrieval (K=5)</li>
-          <li style={styles.listItem}>Hallucination mitigation via citation enforcement</li>
+          <li style={styles.listItem}>
+            Hallucination mitigation via citation enforcement
+          </li>
         </ul>
       </section>
 
@@ -71,27 +73,30 @@ export default function Technology() {
           <li style={styles.listItem}>PostgreSQL (Patient metadata)</li>
           <li style={styles.listItem}>Pinecone (Vector retrieval)</li>
           <li style={styles.listItem}>End-to-end latency: 178ms</li>
-          <li style={styles.listItem}>₹10/patient/month cloud cost (1000 users)</li>
+          <li style={styles.listItem}>
+            ₹10/patient/month cloud cost (1000 users)
+          </li>
         </ul>
       </section>
     </div>
   );
 }
+
 const styles = {
   pageWrapper: {
     background: "radial-gradient(circle at 20% 10%, #0a1628 0%, #02060f 70%)",
     color: "#e6faff",
     fontFamily: "'Inter', sans-serif",
-    paddingBottom: "120px",
+    paddingBottom: "clamp(60px, 10vw, 120px)",
   },
 
   headerSection: {
     textAlign: "center",
-    padding: "120px 10% 80px",
+    padding: "clamp(60px, 10vw, 120px) 5%",
   },
 
   mainTitle: {
-    fontSize: "64px",
+    fontSize: "clamp(30px, 6vw, 64px)",
     fontWeight: "800",
     fontFamily: "'Space Grotesk', sans-serif",
     marginBottom: "20px",
@@ -99,24 +104,26 @@ const styles = {
   },
 
   mainSubtitle: {
-    fontSize: "20px",
+    fontSize: "clamp(15px, 2.5vw, 20px)",
     color: "#9fb3c8",
+    maxWidth: "800px",
+    margin: "0 auto",
   },
 
   section: {
-    padding: "100px 12%",
+    padding: "clamp(60px, 8vw, 100px) 8%",
     borderBottom: "1px solid rgba(0,240,255,0.05)",
   },
 
   sectionAlt: {
-    padding: "100px 12%",
+    padding: "clamp(60px, 8vw, 100px) 8%",
     background: "#040915",
     borderBottom: "1px solid rgba(0,240,255,0.05)",
   },
 
   layerTag: {
     color: "#00f0ff",
-    fontSize: "13px",
+    fontSize: "clamp(11px, 1.5vw, 13px)",
     fontWeight: "700",
     letterSpacing: "3px",
     textTransform: "uppercase",
@@ -125,7 +132,7 @@ const styles = {
   },
 
   title: {
-    fontSize: "44px",
+    fontSize: "clamp(22px, 4vw, 44px)",
     fontWeight: "800",
     marginBottom: "25px",
     fontFamily: "'Space Grotesk', sans-serif",
@@ -133,7 +140,7 @@ const styles = {
   },
 
   text: {
-    fontSize: "18px",
+    fontSize: "clamp(14px, 2.3vw, 18px)",
     lineHeight: "1.8",
     color: "#9fb3c8",
     marginBottom: "30px",
@@ -147,11 +154,10 @@ const styles = {
   },
 
   listItem: {
-    fontSize: "17px",
+    fontSize: "clamp(14px, 2.2vw, 17px)",
     marginBottom: "16px",
     color: "#c8e6ff",
     fontWeight: "500",
-    paddingLeft: "18px",
-    position: "relative",
+    lineHeight: "1.6",
   },
 };

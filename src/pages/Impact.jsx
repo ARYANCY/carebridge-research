@@ -1,201 +1,188 @@
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default function Roadmap() {
   return (
-    <div style={styles.pageWrapper}>
-      
+    <div className="bg-dark text-light">
+
       {/* HEADER */}
-      <section style={styles.headerSection}>
-        <h1 style={styles.mainTitle}>Roadmap & Deployment</h1>
-        <p style={styles.mainSubtitle}>
-          Clinical validation, national integration, and rural scalability strategy through 2028.
+      <section className="container text-center py-5">
+        <h1 className="display-4 fw-bold">Roadmap & Deployment</h1>
+        <p className="lead text-secondary col-lg-8 mx-auto">
+          Clinical validation, ABDM integration, and rural scalability aligned
+          with Indian regulatory frameworks through 2028.
         </p>
       </section>
 
-      {/* PHASE 1 */}
-      <section style={styles.section}>
-        <span style={styles.phaseTag}>Phase 1 — 2026</span>
-        <h2 style={styles.title}>Prospective Clinical Validation</h2>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>300 elderly patients (2+ chronic conditions)</li>
-          <li style={styles.listItem}>6-month randomized controlled trial</li>
-          <li style={styles.listItem}>Primary endpoint: all-cause hospitalization rate</li>
-          <li style={styles.listItem}>CDSCO Class IIa medical device pathway</li>
-          <li style={styles.listItem}>Digital Personal Data Protection Act compliance</li>
-        </ul>
-      </section>
+      {/* PHASE TABLE OVERVIEW */}
+      <section className="container py-5">
+        <h2 className="fw-bold mb-4">Deployment Timeline (2026–2028)</h2>
 
-      {/* PHASE 2 */}
-      <section style={styles.sectionAlt}>
-        <span style={styles.phaseTag}>Phase 2 — 2026–2027</span>
-        <h2 style={styles.title}>ABDM Integration</h2>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>HL7 FHIR R4 interoperability</li>
-          <li style={styles.listItem}>Observation, Condition, MedicationRequest sync</li>
-          <li style={styles.listItem}>15-minute bidirectional data exchange</li>
-          <li style={styles.listItem}>Consent-managed data sharing architecture</li>
-          <li style={styles.listItem}>Integration with Personal Health Records (PHR)</li>
-        </ul>
-      </section>
-
-      {/* PHASE 3 */}
-      <section style={styles.section}>
-        <span style={styles.phaseTag}>Phase 3 — 2027</span>
-        <h2 style={styles.title}>Rural BLE Proxy-Sync Scaling</h2>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>Bluetooth Mesh (BLE 5.0+) village networks</li>
-          <li style={styles.listItem}>Community gateway tablet (72-hour operation)</li>
-          <li style={styles.listItem}>250KB/day compressed CBOR data model</li>
-          <li style={styles.listItem}>Pilot: 800+ patients (Assam + Maharashtra)</li>
-          <li style={styles.listItem}>₹800 one-time hardware amortization per patient</li>
-        </ul>
-      </section>
-
-      {/* PHASE 4 */}
-      <section style={styles.sectionAlt}>
-        <span style={styles.phaseTag}>Phase 4 — 2028+</span>
-        <h2 style={styles.title}>Advanced Predictive Intelligence</h2>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>LSTM-based 7-day cardiac risk forecasting</li>
-          <li style={styles.listItem}>Federated learning for privacy-preserving updates</li>
-          <li style={styles.listItem}>Fall detection (accelerometer + gyroscope fusion)</li>
-          <li style={styles.listItem}>Sleep staging via HRV modeling</li>
-          <li style={styles.listItem}>Voice biomarkers for cognitive screening</li>
-        </ul>
-      </section>
-
-      {/* 2030 VISION */}
-      <section style={styles.impactSection}>
-        <h2 style={styles.impactTitle}>2030 Impact Projection</h2>
-
-        <div style={styles.impactGrid}>
-          <div style={styles.impactBox}>
-            <h3 style={styles.impactValue}>100K+</h3>
-            <p style={styles.impactLabel}>Patients Served</p>
-          </div>
-
-          <div style={styles.impactBox}>
-            <h3 style={styles.impactValue}>38,000</h3>
-            <p style={styles.impactLabel}>Hospitalizations Prevented Annually</p>
-          </div>
-
-          <div style={styles.impactBox}>
-            <h3 style={styles.impactValue}>₹310 Cr</h3>
-            <p style={styles.impactLabel}>Healthcare Savings</p>
-          </div>
+        <div className="table-responsive">
+          <table className="table table-dark table-bordered align-middle">
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Timeline</th>
+                <th>Objective</th>
+                <th>Regulatory Alignment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Phase 1</td>
+                <td>2026</td>
+                <td>300-patient RCT Validation</td>
+                <td>CDSCO Class IIa</td>
+              </tr>
+              <tr>
+                <td>Phase 2</td>
+                <td>2026–27</td>
+                <td>ABDM Interoperability</td>
+                <td>HL7 FHIR R4</td>
+              </tr>
+              <tr>
+                <td>Phase 3</td>
+                <td>2027</td>
+                <td>Rural BLE Mesh Scaling</td>
+                <td>DPDP Act 2023</td>
+              </tr>
+              <tr>
+                <td>Phase 4</td>
+                <td>2028+</td>
+                <td>Predictive AI Deployment</td>
+                <td>Federated Learning</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </section>
+
+      {/* PHASE DETAILS */}
+      <section className="container py-5 border-top">
+        <div className="row g-5">
+
+          <div className="col-lg-6">
+            <h3 className="fw-bold">Phase 1 — Clinical Validation</h3>
+            <ul>
+              <li>300 elderly patients (≥2 chronic conditions)</li>
+              <li>6-month randomized controlled trial</li>
+              <li>Primary endpoint: hospitalization rate</li>
+              <li>Aligned with CDSCO medical device classification (Class IIa)</li>
+            </ul>
+
+            <p className="small text-secondary">
+              Reference: CDSCO Medical Device Rules, 2017 —
+              https://cdsco.gov.in
+            </p>
+          </div>
+
+          <div className="col-lg-6">
+            <h3 className="fw-bold">Phase 2 — ABDM Integration</h3>
+            <ul>
+              <li>HL7 FHIR R4 compliant APIs</li>
+              <li>Observation & Condition resource mapping</li>
+              <li>15-min bidirectional sync</li>
+              <li>Consent Manager integration</li>
+            </ul>
+
+            <p className="small text-secondary">
+              Reference: ABDM Sandbox Documentation —
+              https://abdm.gov.in
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* RURAL SCALING + DATA TABLE */}
+      <section className="container py-5 border-top">
+        <h3 className="fw-bold mb-4">Phase 3 — Rural Infrastructure Model</h3>
+
+        <div className="table-responsive">
+          <table className="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Specification</th>
+                <th>Cost (INR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BLE Mesh Network</td>
+                <td>Bluetooth 5.0+</td>
+                <td>₹800 / patient (amortized)</td>
+              </tr>
+              <tr>
+                <td>Gateway Tablet</td>
+                <td>72-hour battery</td>
+                <td>₹12,000</td>
+              </tr>
+              <tr>
+                <td>Data Format</td>
+                <td>CBOR compressed (250KB/day)</td>
+                <td>Minimal bandwidth</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="small text-secondary">
+          Rural health infrastructure reference: National Health Mission —
+          https://nhm.gov.in
+        </p>
+      </section>
+
+      {/* 2030 IMPACT PROJECTION */}
+      <section className="container py-5 border-top text-center">
+        <h2 className="fw-bold mb-5">2030 Impact Projection</h2>
+
+        <div className="row g-4 justify-content-center">
+
+          <div className="col-md-4">
+            <div className="p-4 border rounded bg-secondary bg-opacity-10">
+              <h3 className="text-info display-6 fw-bold">100,000+</h3>
+              <p>Projected Patients</p>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="p-4 border rounded bg-secondary bg-opacity-10">
+              <h3 className="text-info display-6 fw-bold">38,000</h3>
+              <p>Hospitalizations Prevented / year</p>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="p-4 border rounded bg-secondary bg-opacity-10">
+              <h3 className="text-info display-6 fw-bold">₹310 Cr</h3>
+              <p>Estimated Annual Savings</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p className="mt-5 small text-secondary col-lg-8 mx-auto">
+          WHO estimates that digital health interventions can reduce
+          hospitalization rates by 20–40% in chronic disease cohorts.
+          Source: WHO Global Strategy on Digital Health 2020–2025 —
+          https://who.int/publications/i/item/9789240020924
+        </p>
+      </section>
+
+      {/* DATA SOURCES */}
+      <section className="container py-5 border-top">
+        <h4 className="fw-bold">Evidence & Data Sources</h4>
+        <ul>
+          <li>UNFPA India Ageing Report 2023 — https://india.unfpa.org</li>
+          <li>WHO Digital Health Strategy 2020–2025 — https://who.int</li>
+          <li>ABDM Official Documentation — https://abdm.gov.in</li>
+          <li>CDSCO Medical Device Rules 2017 — https://cdsco.gov.in</li>
+          <li>Digital Personal Data Protection Act 2023 — https://meity.gov.in</li>
+        </ul>
       </section>
 
     </div>
   );
 }
-const styles = {
-  pageWrapper: {
-    background: "radial-gradient(circle at 10% 5%, #07121f 0%, #02060f 80%)",
-    color: "#e6faff",
-    fontFamily: "'Inter', sans-serif",
-    paddingBottom: "120px",
-  },
-
-  headerSection: {
-    textAlign: "center",
-    padding: "120px 10% 80px",
-  },
-
-  mainTitle: {
-    fontSize: "64px",
-    fontWeight: "800",
-    fontFamily: "'Space Grotesk', sans-serif",
-    marginBottom: "20px",
-    color: "#ffffff",
-  },
-
-  mainSubtitle: {
-    fontSize: "20px",
-    color: "#9fb3c8",
-    maxWidth: "900px",
-    margin: "0 auto",
-  },
-
-  section: {
-    padding: "100px 12%",
-    borderBottom: "1px solid rgba(0,240,255,0.05)",
-  },
-
-  sectionAlt: {
-    padding: "100px 12%",
-    background: "#040915",
-    borderBottom: "1px solid rgba(0,240,255,0.05)",
-  },
-
-  phaseTag: {
-    color: "#00f0ff",
-    fontSize: "13px",
-    fontWeight: "700",
-    letterSpacing: "3px",
-    textTransform: "uppercase",
-    display: "block",
-    marginBottom: "15px",
-  },
-
-  title: {
-    fontSize: "44px",
-    fontWeight: "800",
-    marginBottom: "30px",
-    fontFamily: "'Space Grotesk', sans-serif",
-    color: "#ffffff",
-  },
-
-  list: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-  },
-
-  listItem: {
-    fontSize: "18px",
-    marginBottom: "18px",
-    color: "#c8e6ff",
-    fontWeight: "500",
-    lineHeight: "1.6",
-  },
-
-  impactSection: {
-    padding: "120px 12%",
-    textAlign: "center",
-  },
-
-  impactTitle: {
-    fontSize: "48px",
-    fontWeight: "800",
-    marginBottom: "60px",
-    fontFamily: "'Space Grotesk', sans-serif",
-  },
-
-  impactGrid: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "50px",
-    flexWrap: "wrap",
-  },
-
-  impactBox: {
-    padding: "40px 60px",
-    background: "rgba(0,240,255,0.05)",
-    border: "1px solid rgba(0,240,255,0.12)",
-    borderRadius: "20px",
-    minWidth: "250px",
-  },
-
-  impactValue: {
-    fontSize: "46px",
-    fontFamily: "'Space Grotesk', sans-serif",
-    color: "#00f0ff",
-    marginBottom: "10px",
-  },
-
-  impactLabel: {
-    fontSize: "14px",
-    letterSpacing: "1px",
-    textTransform: "uppercase",
-    color: "#6f859e",
-  },
-};
