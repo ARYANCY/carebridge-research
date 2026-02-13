@@ -1,188 +1,174 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-export default function Roadmap() {
+import Footer from "../components/Footer";
+export default function Impact() {
   return (
-    <div className="bg-dark text-light">
+    <>
+      <section className="impact-wrapper py-5">
 
-      {/* HEADER */}
-      <section className="container text-center py-5">
-        <h1 className="display-4 fw-bold">Roadmap & Deployment</h1>
-        <p className="lead text-secondary col-lg-8 mx-auto">
-          Clinical validation, ABDM integration, and rural scalability aligned
-          with Indian regulatory frameworks through 2028.
-        </p>
-      </section>
-
-      {/* PHASE TABLE OVERVIEW */}
-      <section className="container py-5">
-        <h2 className="fw-bold mb-4">Deployment Timeline (2026–2028)</h2>
-
-        <div className="table-responsive">
-          <table className="table table-dark table-bordered align-middle">
-            <thead>
-              <tr>
-                <th>Phase</th>
-                <th>Timeline</th>
-                <th>Objective</th>
-                <th>Regulatory Alignment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Phase 1</td>
-                <td>2026</td>
-                <td>300-patient RCT Validation</td>
-                <td>CDSCO Class IIa</td>
-              </tr>
-              <tr>
-                <td>Phase 2</td>
-                <td>2026–27</td>
-                <td>ABDM Interoperability</td>
-                <td>HL7 FHIR R4</td>
-              </tr>
-              <tr>
-                <td>Phase 3</td>
-                <td>2027</td>
-                <td>Rural BLE Mesh Scaling</td>
-                <td>DPDP Act 2023</td>
-              </tr>
-              <tr>
-                <td>Phase 4</td>
-                <td>2028+</td>
-                <td>Predictive AI Deployment</td>
-                <td>Federated Learning</td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Section 1 – Problem Scale */}
+        <div className="container text-center mb-5">
+          <h2 className="section-title mb-4">The Growing Crisis</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <h3>173M+</h3>
+                <p>Indian seniors by 2026 (UNFPA 2023)</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <h3>70%</h3>
+                <p>Digital literacy gap among elderly</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <h3>75%</h3>
+                <p>Suffer from chronic diseases</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* PHASE DETAILS */}
-      <section className="container py-5 border-top">
-        <div className="row g-5">
+        {/* Section 2 – System Gap */}
+        <div className="container text-center mb-5">
+          <h2 className="section-title mb-4">Current System Gap</h2>
+          <div className="row">
+            <div className="col-md-6 mb-4">
+              <div className="impact-card p-4">
+                <p>Monitoring systems are reactive and threshold-based.</p>
+              </div>
+            </div>
+            <div className="col-md-6 mb-4">
+              <div className="impact-card p-4">
+                <p>No correlation between AQI, heat & cardiac stress.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div className="col-lg-6">
-            <h3 className="fw-bold">Phase 1 — Clinical Validation</h3>
-            <ul>
-              <li>300 elderly patients (≥2 chronic conditions)</li>
-              <li>6-month randomized controlled trial</li>
-              <li>Primary endpoint: hospitalization rate</li>
-              <li>Aligned with CDSCO medical device classification (Class IIa)</li>
-            </ul>
+        {/* Section 3 – Our Innovation */}
+        <div className="container text-center mb-5">
+          <h2 className="section-title mb-4">CareBridge Innovation</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>Zero-UI Passive Monitoring</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>3D Digital Twin Visualization</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>Predictive Alerts (2–3 hrs early)</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <p className="small text-secondary">
-              Reference: CDSCO Medical Device Rules, 2017 —
-              https://cdsco.gov.in
+        {/* Section 4 – AI & Intelligence */}
+        <div className="container text-center mb-5">
+          <h2 className="section-title mb-4">AI & Intelligence Layer</h2>
+          <div className="row">
+            <div className="col-md-6 mb-4">
+              <div className="impact-card p-4">
+                <p>GenAI-powered Med-RAG Clinical Reasoning</p>
+              </div>
+            </div>
+            <div className="col-md-6 mb-4">
+              <div className="impact-card p-4">
+                <p>Environmental–Vital Correlation Engine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 5 – Rural Accessibility */}
+        <div className="container text-center mb-5">
+          <h2 className="section-title mb-4">Rural & Offline Ready</h2>
+          <div className="row">
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>Edge AI Inference (Offline)</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>Bluetooth Store & Forward (24h caching)</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="impact-card p-4">
+                <p>LoRa Mesh Network Scaling</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 6 – Impact Vision */}
+        <div className="container text-center">
+          <h2 className="section-title mb-4">Our Vision</h2>
+          <div className="impact-card p-5">
+            <p>
+              Transform elderly monitoring from reactive emergency response
+              to proactive, predictive risk prevention using Real-Time
+              Sensor Data and GenAI Analytics.
             </p>
           </div>
-
-          <div className="col-lg-6">
-            <h3 className="fw-bold">Phase 2 — ABDM Integration</h3>
-            <ul>
-              <li>HL7 FHIR R4 compliant APIs</li>
-              <li>Observation & Condition resource mapping</li>
-              <li>15-min bidirectional sync</li>
-              <li>Consent Manager integration</li>
-            </ul>
-
-            <p className="small text-secondary">
-              Reference: ABDM Sandbox Documentation —
-              https://abdm.gov.in
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* RURAL SCALING + DATA TABLE */}
-      <section className="container py-5 border-top">
-        <h3 className="fw-bold mb-4">Phase 3 — Rural Infrastructure Model</h3>
-
-        <div className="table-responsive">
-          <table className="table table-dark table-striped">
-            <thead>
-              <tr>
-                <th>Component</th>
-                <th>Specification</th>
-                <th>Cost (INR)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>BLE Mesh Network</td>
-                <td>Bluetooth 5.0+</td>
-                <td>₹800 / patient (amortized)</td>
-              </tr>
-              <tr>
-                <td>Gateway Tablet</td>
-                <td>72-hour battery</td>
-                <td>₹12,000</td>
-              </tr>
-              <tr>
-                <td>Data Format</td>
-                <td>CBOR compressed (250KB/day)</td>
-                <td>Minimal bandwidth</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
-        <p className="small text-secondary">
-          Rural health infrastructure reference: National Health Mission —
-          https://nhm.gov.in
-        </p>
+
+
       </section>
+        <Footer/>
 
-      {/* 2030 IMPACT PROJECTION */}
-      <section className="container py-5 border-top text-center">
-        <h2 className="fw-bold mb-5">2030 Impact Projection</h2>
+      {/* CSS inside JSX */}
+      <style jsx>{`
+        .impact-wrapper {
+          background: #0f172a;
+          color: white;
+        }
 
-        <div className="row g-4 justify-content-center">
+        .section-title {
+          font-weight: 700;
+          font-size: 2rem;
+          background: linear-gradient(90deg, #00f5a0, #00d9f5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
 
-          <div className="col-md-4">
-            <div className="p-4 border rounded bg-secondary bg-opacity-10">
-              <h3 className="text-info display-6 fw-bold">100,000+</h3>
-              <p>Projected Patients</p>
-            </div>
-          </div>
+        .impact-card {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          transition: 0.3s ease;
+        }
 
-          <div className="col-md-4">
-            <div className="p-4 border rounded bg-secondary bg-opacity-10">
-              <h3 className="text-info display-6 fw-bold">38,000</h3>
-              <p>Hospitalizations Prevented / year</p>
-            </div>
-          </div>
+        .impact-card h3 {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #00f5a0;
+        }
 
-          <div className="col-md-4">
-            <div className="p-4 border rounded bg-secondary bg-opacity-10">
-              <h3 className="text-info display-6 fw-bold">₹310 Cr</h3>
-              <p>Estimated Annual Savings</p>
-            </div>
-          </div>
+        .impact-card p {
+          margin: 0;
+          font-size: 1rem;
+          opacity: 0.9;
+        }
 
-        </div>
+        @media (max-width: 768px) {
+          .section-title {
+            font-size: 1.6rem;
+          }
 
-        <p className="mt-5 small text-secondary col-lg-8 mx-auto">
-          WHO estimates that digital health interventions can reduce
-          hospitalization rates by 20–40% in chronic disease cohorts.
-          Source: WHO Global Strategy on Digital Health 2020–2025 —
-          https://who.int/publications/i/item/9789240020924
-        </p>
-      </section>
-
-      {/* DATA SOURCES */}
-      <section className="container py-5 border-top">
-        <h4 className="fw-bold">Evidence & Data Sources</h4>
-        <ul>
-          <li>UNFPA India Ageing Report 2023 — https://india.unfpa.org</li>
-          <li>WHO Digital Health Strategy 2020–2025 — https://who.int</li>
-          <li>ABDM Official Documentation — https://abdm.gov.in</li>
-          <li>CDSCO Medical Device Rules 2017 — https://cdsco.gov.in</li>
-          <li>Digital Personal Data Protection Act 2023 — https://meity.gov.in</li>
-        </ul>
-      </section>
-
-    </div>
+          .impact-card {
+            padding: 1.5rem !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }

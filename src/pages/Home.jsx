@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../components/Footer";
 
 import digitalTwin from "../assets/digital_twin_human.png";
 import elderlyGraph from "../assets/elderly_demographic_graph.jpeg";
@@ -123,6 +124,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <Footer/>
 
     </div>
   );

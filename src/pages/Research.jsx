@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../components/Footer";
 
 export default function Research() {
   return (
@@ -183,6 +184,7 @@ export default function Research() {
           https://www.lancetcountdown.org
         </p>
       </section>
+      <Footer/>
 
     </div>
   );
