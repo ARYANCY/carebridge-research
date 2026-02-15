@@ -125,7 +125,7 @@ const styles = {
 
   section: {
     padding: "clamp(60px, 8vw, 120px) 8%",
-    borderBottom: "1px solid rgba(0,240,255,0.06)",
+    borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
   },
 
   sectionAlt: {

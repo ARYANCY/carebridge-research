@@ -1,51 +1,26 @@
-import { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { MousePointer2, Activity } from "lucide-react";
+import { Activity } from "lucide-react";
+import { useEffect, useState } from "react";
+import Body from "./body";
 import "../styles/Hero.css";
 
 export default function Hero() {
-  const videoRef = useRef(null);
-  const scrollTimeout = useRef(null);
-  const lastScrollY = useRef(0);
-  const lastTime = useRef(Date.now());
+  const quotes = [
+    "Predict. Prevent. Protect.",
+    "AI That Cares Before Crisis.",
+    "Digital Twin for Human Life.",
+    "From Data to Diagnosis.",
+    "Intelligence for Elder Health."
+  ];
+
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % quotes.length);
+    }, 3000);
 
-    video.playbackRate = 0;
-    lastScrollY.current = window.scrollY;
-
-    const handleScroll = () => {
-      const now = Date.now();
-      const currentScrollY = window.scrollY;
-      const scrollDelta = Math.abs(currentScrollY - lastScrollY.current);
-      const timeDelta = now - lastTime.current || 1;
-      const scrollSpeed = scrollDelta / timeDelta;
-
-      if (video.paused) {
-        video.play().catch(() => {});
-      }
-
-      let newRate = 0.5 + scrollSpeed * 8;
-      video.playbackRate = Math.min(Math.max(newRate, 0.5), 4);
-
-      clearTimeout(scrollTimeout.current);
-      scrollTimeout.current = setTimeout(() => {
-        video.pause();
-        video.playbackRate = 0;
-      }, 150);
-
-      lastScrollY.current = currentScrollY;
-      lastTime.current = now;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout.current);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -55,7 +30,7 @@ export default function Hero() {
       <div className="container position-relative z-2 py-5">
         <div className="row align-items-center gy-5">
           
-          {/* Content Column */}
+          {/* Content */}
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <div className="d-inline-flex align-items-center bg-dark-soft border border-info rounded-pill px-3 py-1 mb-4">
               <Activity className="text-info me-2 pulse-icon" size={16} />
@@ -64,13 +39,29 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="display-3 display-md-2 fw-bold text-white mb-3">
+            <h1 className="display-3 fw-bold text-white mb-2">
               Care<span className="text-gradient">Bridge</span>
             </h1>
 
-            <p className="fs-5 fs-md-4 text-secondary mb-5 pe-lg-5">
-              Bridging the "Grey Divide" with proactive, Zero-UI healthcare for
-              the next generation of elderly care.
+            {/* Rotating Quotes */}
+            <div
+              key={index}
+              style={{
+                minHeight: "40px",
+                fontSize: "1.1rem",
+                fontWeight: "600",
+                letterSpacing: "1px",
+                color: "#00f0ff",
+                marginBottom: "1rem",
+                transition: "all 0.5s ease",
+              }}
+            >
+              {quotes[index]}
+            </div>
+
+            <p className="fs-5 text-secondary mb-5 pe-lg-5">
+              Bridging the "Grey Divide" with proactive, Zero-UI healthcare
+              for the next generation of elderly care.
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
@@ -80,49 +71,25 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="text-decoration-none"
               >
-                <button className="btn btn-info btn-lg px-4 px-md-5 py-3 rounded-4 fw-bold shadow-cyan-sm hover-scale">
+                <button className="btn btn-info btn-lg px-4 py-3 rounded-4 fw-bold shadow-cyan-sm">
                   Analyze Vitals
                 </button>
               </a>
-
-              <div className="d-flex align-items-center justify-content-center text-secondary">
-                <MousePointer2 className="me-2 anim-bounce-y" size={18} />
-                <span className="small">
-                  Scroll to interact with the Twin
-                </span>
-              </div>
             </div>
           </div>
 
-          {/* Video Column */}
+          {/* 3D Model */}
           <div className="col-12 col-lg-6 d-flex justify-content-center">
             <div
-              className="video-viewport shadow-cyan-lg w-100"
-              style={{
-                maxWidth: "520px",
-              }}
+              className="video-viewport shadow-cyan-lg w-100 position-relative"
+              style={{ maxWidth: "520px", height: "520px" }}
             >
-              <video
-                ref={videoRef}
-                src="/body.mp4"
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="w-100"
-                style={{
-                  borderRadius: "24px",
-                  objectFit: "contain",
-                }}
-              />
+              <Body />
 
-              <div className="overlay-ui p-3 p-md-4 d-flex flex-column justify-content-between">
+              <div className="overlay-ui p-4 d-flex flex-column justify-content-between position-absolute top-0 start-0 w-100 h-100">
                 <div className="d-flex justify-content-between align-items-start">
                   <div className="badge bg-info-soft border border-info small">
                     3D Organ Mesh v1.0
-                  </div>
-                  <div className="small text-info fw-mono">
-                    LATENCY: 87ms
                   </div>
                 </div>
                 <div className="scan-line"></div>
